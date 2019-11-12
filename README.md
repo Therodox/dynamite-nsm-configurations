@@ -39,11 +39,11 @@ vim config.cfg
 
 - Run the deployment script
 ```bash
-python deploy-configs.py default_configs/ mirrors/ 0.5.5
+python deploy-configs.py default_configs/ mirrors/ 0.55
 ``` 
 
 - *OR* if you are deploying as to the pro staging environment.
 ```bash
-python deploy-configs.py default_configs/ mirrors/ 0.5.5 --dynamite-pro
+python deploy-configs.py default_configs/ mirrors/ 0.55 --dynamite-pro
 ```
 
