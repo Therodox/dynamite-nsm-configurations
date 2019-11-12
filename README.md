@@ -50,7 +50,7 @@ vim config.cfg
 - Note the corresponding release value in [dynamite-nsm releases](https://github.com/DynamiteAI/dynamite-nsm/releases).
 
 <p align="center">
-  <img src="https://github.com/vlabsio/dynamite-nsm-configurations/raw/master/img/get-dynamite-version"  width="90%" height="auto">
+  <img src="https://github.com/DynamiteAI/dynamite-nsm-configurations/raw/master/img/get-dynamite-version.png"  width="90%" height="auto">
 </p>
 
 
