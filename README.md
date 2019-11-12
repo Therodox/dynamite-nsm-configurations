@@ -6,31 +6,10 @@ These configurations are hosted on S3, but managed within this repository.
 
 #### S3 Staging URLs
 
-##### Dynamite Pro Default Configs
-
-```
-https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-pro/latest/default_configs.tar.gz
-```
-
-
-##### Dynamite Pro Mirrors
-
-```
-https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-pro/latest/mirrors.tar.gz
-```
-
-##### Dynamite Public Default Configs
-
-```
-https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-public/latest/default_configs.tar.gz
-```
-
-
-##### Dynamite Public Mirrors
-
-```
-https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-public/latest/mirrors.tar.gz
-```
+##### [Dynamite Pro Default Configs](https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-pro/latest/default_configs.tar.gz)
+##### [Dynamite Pro Mirrors](https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-pro/latest/mirrors.tar.gz)
+##### [Dynamite Public Default Configs](https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-public/latest/default_configs.tar.gz)
+##### [Dynamite Public Mirrors](https://dynamite-config-staging.s3-us-west-2.amazonaws.com/dynamite-public/latest/mirrors.tar.gz)
 
 ### Deploying New Configurations/Mirrors
 
