@@ -33,7 +33,9 @@ vim config.cfg
 </p>
 
 
-- Create a corresponding release in this repository. If you are building from the "dynamite-pro" branch, tag the version with `pro`.
+- Create a corresponding release in this repository.
+  - If you are deploying a pro configuration, you should be deploying from the `dynamite-pro-configs` branch, and prefix the version tag with `pro`.
+  - If you are deploying a public configuration, you should be deploying from the `master` branch.
 
 - Run the deployment script
 ```bash
