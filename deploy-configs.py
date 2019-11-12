@@ -152,7 +152,7 @@ def upload_to_pro(default_configs_directory, mirrors_directory, version):
     copy_to_latest(
         'default_configs.tar.gz',
         'dynamite-config-staging',
-        'dynamite-public/{}'.format(version)
+        'dynamite-pro/{}'.format(version)
     )
     print('Uploading Mirror Configs...')
     upload_file(
@@ -164,7 +164,7 @@ def upload_to_pro(default_configs_directory, mirrors_directory, version):
     copy_to_latest(
         'mirrors.tar.gz',
         'dynamite-config-staging',
-        'dynamite-public/{}'.format(version)
+        'dynamite-pro/{}'.format(version)
     )
 
     print('''
