@@ -73,15 +73,16 @@ def get_pro_versions():
     return list(versions)
 
 
-def upload_to_public(default_configs_directory, mirrors_directory, version):
+def upload_to_public(default_configs_directory, mirrors_directory, version, overwrite=False):
     existing_versions = get_public_versions()
-    if float(version) in existing_versions:
-        print('A version of this number already exists.')
-        return
-    if existing_versions:
-        if float(version) < max(existing_versions):
-            print('The version given must be greater than {}'.format(max(existing_versions)))
+    if not overwrite:
+        if float(version) in existing_versions:
+            print('A version of this number already exists.')
             return
+        if existing_versions:
+            if float(version) < max(existing_versions):
+                print('The version given must be greater than {}'.format(max(existing_versions)))
+                return
 
     print('Building compressed TAR files...')
     make_tarfile('default_configs-{}.tar.gz'.format(version), default_configs_directory)
@@ -128,15 +129,16 @@ def upload_to_public(default_configs_directory, mirrors_directory, version):
     '''.format(version, version))
 
 
-def upload_to_pro(default_configs_directory, mirrors_directory, version):
+def upload_to_pro(default_configs_directory, mirrors_directory, version, overwrite=False):
     existing_versions = get_pro_versions()
-    if float(version) in existing_versions:
-        print('A version of this number already exists.')
-        return
-    if existing_versions:
-        if float(version) < max(existing_versions):
-            print('The version given must be greater than {}'.format(max(existing_versions)))
+    if not overwrite:
+        if float(version) in existing_versions:
+            print('A version of this number already exists.')
             return
+        if existing_versions:
+            if float(version) < max(existing_versions):
+                print('The version given must be greater than {}'.format(max(existing_versions)))
+                return
     print('Building compressed TAR files...')
     make_tarfile('default_configs-{}.tar.gz'.format(version), default_configs_directory)
     def_config_tar_fh = open('default_configs-{}.tar.gz'.format(version), 'rb')
@@ -196,15 +198,17 @@ if __name__ == '__main__':
                         help='The corresponding dynamite-nsm version')
     parser.add_argument('--dynamite-pro', default=False, dest='dynamite_pro', action='store_true',
                         help='Upload to Dynamite Pro staging environment instead of public.')
+    parser.add_argument('--overwrite', default=False, dest='overwrite', action='store_true',
+                        help='If true overwrites an old version if one is specified.')
 
     args = parser.parse_args()
 
     if args.dynamite_pro:
         print('Uploaded Pro Versions: {}'.format(', '.join([str(v) for v in get_pro_versions()])))
-        upload_to_pro(args.default_configs_directory, args.mirrors_directory, args.version)
+        upload_to_pro(args.default_configs_directory, args.mirrors_directory, args.version, args.overwrite)
     else:
         print('Uploaded Public Versions: {}'.format(', '.join([str(v) for v in get_public_versions()])))
-        upload_to_public(args.default_configs_directory, args.mirrors_directory, args.version)
+        upload_to_public(args.default_configs_directory, args.mirrors_directory, args.version, args.overwrite)
 
 
 
