@@ -1,5 +1,5 @@
 {
-  "index_patterns": "zeek-baselining-*",
+  "index_patterns": "zeek-baselines-*",
   "mappings": {
     "dynamic_templates": [
       {
