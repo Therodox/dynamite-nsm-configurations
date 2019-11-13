@@ -199,6 +199,14 @@
         }
       },
       {
+        "zeek.pcr": {
+          "path_match": "zeek.pcr",
+          "mapping": {
+            "type": "long"
+          }
+        }
+      },
+      {
         "zeek.event_type": {
           "path_match": "zeek.event_type",
           "mapping": {
