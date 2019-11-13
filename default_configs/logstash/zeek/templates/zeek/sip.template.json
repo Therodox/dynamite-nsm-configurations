@@ -70,7 +70,7 @@
         "zeek.call_id": {
           "path_match": "zeek.call_id", 
           "mapping": {
-            "type": "float"
+            "type": "keyword"
           }
         }
       }, 
