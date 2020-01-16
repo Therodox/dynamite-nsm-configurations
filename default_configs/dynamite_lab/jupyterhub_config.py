@@ -1,1 +1,0 @@
-c.JupyterHub.pid_file = '/var/run/dynamite/jupyterhub/jupyterhub.pid'

@@ -1,0 +1,28 @@
+- pipeline.id: beats_pipeline
+  config.string: |
+    input {
+      kafka {
+        bootstrap_servers => "localhost:9092"
+        topics => ["raw-logs"]
+        codec => json
+      }
+    }
+    filter {
+       ruby {
+         code => "event.set('[event_type]', event.get('[log][file][path]').split('/').last.split('.').first)"
+       }
+    }
+    output {
+      if[event_type] != "eve" {
+         pipeline { send_to => elastiflow }
+      }
+      else {
+        pipeline { send_to => synesis }
+      }
+    }
+
+- pipeline.id: elastiflow_pipeline
+  path.config: "/etc/dynamite/logstash/elastiflow/conf.d/*.conf"
+
+- pipeline.id: synesis_pipeline
+  path.config: "/etc/dynamite/logstash/synesis/conf.d/*.conf"
