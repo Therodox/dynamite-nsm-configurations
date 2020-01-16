@@ -5,7 +5,9 @@ import argparse
 from configparser import ConfigParser
 config = ConfigParser()
 
-config.read('config.cfg')
+c = config.read('config.cfg')
+if not c:
+    config.read('../config.cfg')
 
 
 def make_tarfile(output_filename, source_dir):
