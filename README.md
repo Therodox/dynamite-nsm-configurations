@@ -34,16 +34,14 @@ vim config.cfg
 
 
 - Create a corresponding release in this repository.
-  - If you are deploying a pro configuration, you should be deploying from the `dynamite-pro-configs` branch, and prefix the version tag with `pro`.
-  - If you are deploying a public configuration, you should be deploying from the `master` branch.
 
 - Run the deployment script
 ```bash
-python deploy-configs.py default_configs/ mirrors/ 0.55
+cd public; python ../deploy-configs.py default_configs/ mirrors/ 0.55
 ``` 
 
 - *OR* if you are deploying as to the pro staging environment.
 ```bash
-python deploy-configs.py default_configs/ mirrors/ 0.55 --dynamite-pro
+cd pro; python ../deploy-configs.py default_configs/ mirrors/ 0.55 --dynamite-pro
 ```
 
