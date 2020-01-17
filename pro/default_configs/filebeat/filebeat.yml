@@ -42,7 +42,7 @@ filebeat.config.modules:
 #----------------------------- Logstash output --------------------------------
 output.kafka:
   # The Logstash hosts
-  hosts: ["localhost:9092"]
+  hosts: ["${ELASTIFLOW_KAFKA_SERVER:localhost:9092}"]
   topic: "raw-logs"
 
   # Optional SSL. By default is off.
