@@ -2,8 +2,8 @@
   config.string: |
     input {
       kafka {
-        bootstrap_servers => "localhost:9092"
-        topics => ["raw-logs"]
+        bootstrap_servers => "${ELASTIFLOW_KAFKA_SERVER:localhost:9092}"
+        topics => ["${ELASTIFLOW_KAFKA_EVENT_TOPIC:raw-logs}"]
         codec => json
       }
     }
