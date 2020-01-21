@@ -1,19 +1,29 @@
-- pipeline.id: beats_pipeline
+- pipeline.id: kafka_pipeline
   config.string: |
     input {
       kafka {
-        bootstrap_servers => "${ELASTIFLOW_KAFKA_SERVER:localhost:9092}"
-        topics => ["${ELASTIFLOW_KAFKA_EVENT_TOPIC:raw-logs}"]
+        bootstrap_servers => "${KAFKA_SERVER:localhost:9092}"
+        topics => ["${EVENT_TOPIC:raw-logs}", "${ENTITY_SNAPSHOT_TOPIC:entity-snapshots}"]
         codec => json
       }
     }
     filter {
-       ruby {
-         code => "event.set('[event_type]', event.get('[log][file][path]').split('/').last.split('.').first)"
+       if ([log]) {
+        ruby {
+          code => "event.set('[event_type]', event.get('[log][file][path]').split('/').last.split('.').first)"
+        }
        }
+       else {
+        ruby {
+          code => "event.set('[event_type]', 'entity_snapshot')"
+        }
+      }
     }
     output {
-      if[event_type] != "eve" {
+      if [event_type] == "entity_snapshot" {
+         pipeline { send_to => entity_snapshots }
+      }
+      else if[event_type] != "eve" {
          pipeline { send_to => elastiflow }
       }
       else {
@@ -22,7 +32,10 @@
     }
 
 - pipeline.id: elastiflow_pipeline
-  path.config: "/etc/dynamite/logstash/elastiflow/conf.d/*.conf"
+  path.config: "/etc/logstash/elastiflow/conf.d/*.conf"
 
 - pipeline.id: synesis_pipeline
-  path.config: "/etc/dynamite/logstash/synesis/conf.d/*.conf"
+  path.config: "/etc/logstash/synlite_suricata/conf.d/*.conf"
+
+- pipeline.id: entity_snapshots
+  path.config: "/etc/logstash/entity_snapshots/conf.d/*.conf"
