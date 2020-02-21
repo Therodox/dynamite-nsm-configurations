@@ -110,7 +110,7 @@
         "zeek.version": {
           "path_match": "zeek.version",
           "mapping": {
-            "type": "float"
+            "type": "keyword"
           }
         }
       },

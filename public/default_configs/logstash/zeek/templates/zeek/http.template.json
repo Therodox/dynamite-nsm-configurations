@@ -110,7 +110,7 @@
         "zeek.host": {
           "path_match": "zeek.host",
           "mapping": {
-            "type": "ip"
+            "type": "keyword"
           }
         }
       },
