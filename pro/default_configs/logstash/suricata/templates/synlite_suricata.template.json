@@ -328,7 +328,7 @@
             }
           },
           "flags": {
-            "type": "long"
+            "type": "keyword"
           },
           "grouped": {
             "dynamic": true,
