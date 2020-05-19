@@ -89,6 +89,7 @@
 
 # Plugins
 @load Corelight/CommunityID
+@load Bro_AF_Packet/scripts
 
 # Notice Framework
 @load policy/frameworks/notice/extend-email/hostnames
