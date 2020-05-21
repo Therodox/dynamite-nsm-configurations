@@ -5,11 +5,11 @@ PartOf=dynamite-agent.target
 
 [Service]
 EnvironmentFile=/etc/dynamite/environment
-ExecStartPre=/usr/bin/python ${ZEEK_HOME}/bin/broctl cleanup
-ExecStartPre=/usr/bin/python ${ZEEK_HOME}/bin/broctl check
-ExecStartPre=/usr/bin/python ${ZEEK_HOME}/bin/broctl install
-ExecStart=/usr/bin/python ${ZEEK_HOME}/bin/broctl start
-ExecStop=/usr/bin/python ${ZEEK_HOME}/bin/broctl stop
+ExecStartPre=/bin/bash -c "`whereis python | cut -d' ' -f2` ${ZEEK_HOME}/bin/broctl cleanup"
+ExecStartPre=/bin/bash -c "`whereis python | cut -d' ' -f2` ${ZEEK_HOME}/bin/broctl check"
+ExecStartPre=/bin/bash -c "`whereis python | cut -d' ' -f2` ${ZEEK_HOME}/bin/broctl install"
+ExecStart=/bin/bash -c "`whereis python | cut -d' ' -f2` ${ZEEK_HOME}/bin/broctl start"
+ExecStop=/bin/bash -c "`whereis python | cut -d' ' -f2` ${ZEEK_HOME}/bin/broctl stop"
 RestartSec=10s
 Type=oneshot
 RemainAfterExit=yes
