@@ -5,7 +5,8 @@ PartOf=dynamite-agent.target
 
 [Service]
 EnvironmentFile=/etc/dynamite/environment
-Environment="PYTHON_BIN=`whereis python | tr ' ' '\n' | grep -v config | cut -d$'\n' -f2`"
+# Find the python2 binary
+Environment="PYTHON_BIN=`whereis python | tr ' ' '\n' | grep -v config | grep -v 3 | cut -d$'\n' -f2`"
 ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl cleanup"
 ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl check"
 ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl install"
