@@ -185,6 +185,14 @@
             "type": "keyword"
           }
         }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   },
@@ -221,7 +229,8 @@
         "zeek.TTLs",
         "zeek.id.orig_h",
         "zeek.id.resp_p",
-        "zeek.rcode_name"
+        "zeek.rcode_name",
+        "zeek.community_id"
       ]
     }
   }

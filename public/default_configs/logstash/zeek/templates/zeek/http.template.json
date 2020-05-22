@@ -169,6 +169,14 @@
             "type": "keyword"
           }
         }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   },
@@ -202,7 +210,8 @@
         "zeek.version",
         "zeek.status_code",
         "zeek.uri",
-        "zeek.method"
+        "zeek.method",
+        "zeek.community_id"
       ]
     }
   }
