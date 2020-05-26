@@ -1,5 +1,5 @@
 [CONSTANTS]
-VERSION=0.7.0
+VERSION=0.7.1
 DYNAMITE_SDK_ARCHIVE_NAME=dynamite-sdk-lite-0.1.2.tar.gz
 ELASTIFLOW_ARCHIVE_NAME=elastiflow-vlabs-0.5.3-3.5.0.tar.gz
 ELASTICSEARCH_ARCHIVE_NAME=elasticsearch-7.2.0.tar.gz
