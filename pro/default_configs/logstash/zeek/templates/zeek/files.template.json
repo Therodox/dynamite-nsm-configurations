@@ -27,7 +27,8 @@
         "zeek.timedout",
         "zeek.total_bytes",
         "zeek.ts",
-        "zeek.tx_hosts"
+        "zeek.tx_hosts",
+        "zeek.community_id"
       ]
     }
   },
@@ -184,6 +185,14 @@
           "path_match": "zeek.ts",
           "mapping": {
             "type": "date"
+          }
+        }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
           }
         }
       },

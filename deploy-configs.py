@@ -279,7 +279,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.dynamite_dev:
         print('Uploaded Dev Versions: {}'.format(', '.join([str(v) for v in get_dev_versions()])))
-        upload_to_pro(args.default_configs_directory, args.mirrors_directory, args.version, args.overwrite)
+        upload_to_dev(args.default_configs_directory, args.mirrors_directory, args.version, args.overwrite)
     elif args.dynamite_pro:
         print('Uploaded Pro Versions: {}'.format(', '.join([str(v) for v in get_pro_versions()])))
         upload_to_pro(args.default_configs_directory, args.mirrors_directory, args.version, args.overwrite)

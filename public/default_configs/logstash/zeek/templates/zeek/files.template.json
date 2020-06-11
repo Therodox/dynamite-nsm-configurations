@@ -1,10 +1,10 @@
 {
   "settings": {
     "index": {
-      "number_of_shards": 3,
-      "number_of_replicas": 1,
+      "number_of_replicas": 0,
       "refresh_interval": "10s",
-      "codec": "best_compression"
+      "codec": "best_compression",
+      "number_of_shards": 1
     },
     "query": {
       "default_field": [
@@ -27,7 +27,8 @@
         "zeek.timedout",
         "zeek.total_bytes",
         "zeek.ts",
-        "zeek.tx_hosts"
+        "zeek.tx_hosts",
+        "zeek.community_id"
       ]
     }
   },
@@ -184,6 +185,14 @@
           "path_match": "zeek.ts",
           "mapping": {
             "type": "date"
+          }
+        }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
           }
         }
       },
