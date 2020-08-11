@@ -7,11 +7,11 @@ PartOf=dynamite-agent.target
 EnvironmentFile=/etc/dynamite/environment
 # Find the python2 binary
 Environment="PYTHON_BIN=`whereis python | tr ' ' '\n' | grep -v config | grep -v 3 | cut -d$'\n' -f2`"
-ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl cleanup"
-ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl check"
-ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl install"
-ExecStart=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl start"
-ExecStop=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/broctl stop"
+ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/zeekctl cleanup"
+ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/zeekctl check"
+ExecStartPre=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/zeekctl install"
+ExecStart=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/zeekctl start"
+ExecStop=/bin/bash -c "${PYTHON_BIN} ${ZEEK_HOME}/bin/zeekctl stop"
 RestartSec=10s
 Type=oneshot
 RemainAfterExit=yes

@@ -1,5 +1,5 @@
 [CONSTANTS]
-VERSION=0.7.1
+VERSION=0.7.2
 DYNAMITE_SDK_ARCHIVE_NAME=dynamite-sdk-lite-0.1.2.tar.gz
 ELASTIFLOW_ARCHIVE_NAME=elastiflow-vlabs-0.5.3-3.5.0.tar.gz
 ELASTICSEARCH_ARCHIVE_NAME=elasticsearch-7.2.0.tar.gz
@@ -11,7 +11,7 @@ OINKMASTER_ARCHIVE_NAME=oinkmaster-snapshot.tar.gz
 PF_RING_ARCHIVE_NAME=PF_RING-7.4.0.tar.gz
 SYNESIS_ARCHIVE_NAME=synesis_lite_suricata-vlabs-0.1.0-1.1.0.tar.gz
 SURICATA_ARCHIVE_NAME=suricata-4.1.8.tar.gz
-ZEEK_ARCHIVE_NAME=bro-2.6.1.tar.gz
+ZEEK_ARCHIVE_NAME=zeek-3.0.3.tar.gz
 DYNAMITE_SDK_DIRECTORY_NAME=dynamite-sdk-lite-0.1.2
 ELASTIFLOW_DIRECTORY_NAME=elastiflow-vlabs-0.5.3-3.5.0
 ELASTICSEARCH_DIRECTORY_NAME=elasticsearch-7.2.0
@@ -23,7 +23,7 @@ OINKMASTER_DIRECTORY_NAME=oinkmaster
 PF_RING_DIRECTORY_NAME=PF_RING-7.4.0
 SYNESIS_DIRECTORY_NAME=synesis_lite_suricata-vlabs-0.1.0-1.1.0
 SURICATA_DIRECTORY_NAME=suricata-4.1.8
-ZEEK_DIRECTORY_NAME=bro-2.6.1
+ZEEK_DIRECTORY_NAME=zeek-3.0.3
 DYNAMITE_SDK_MIRRORS=/etc/dynamite/mirrors/dynamite_sdk
 ELASTIFLOW_MIRRORS=/etc/dynamite/mirrors/elastiflow
 ELASTICSEARCH_MIRRORS=/etc/dynamite/mirrors/elasticsearch
