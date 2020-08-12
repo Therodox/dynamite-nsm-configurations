@@ -193,16 +193,56 @@
             "type": "keyword"
           }
         }
+      },
+      {
+        "zeek.labels.tld": {
+          "path_match": "zeek.labels.tld",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
+      },
+      {
+        "zeek.labels.cnt": {
+          "path_match": "zeek.labels.cnt",
+          "mapping": {
+            "type": "float"
+          }
+        }
+      },
+      {
+        "zeek.labels.subs": {
+          "path_match": "zeek.labels.subs",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
+      },
+      {
+        "zeek.labels.lvl2": {
+          "path_match": "zeek.labels.lvl2",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
+      },
+      {
+        "zeek.labels.lowest": {
+          "path_match": "zeek.labels.lowest",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   },
   "order": 0,
   "settings": {
     "index": {
-      "number_of_replicas": 0,
+      "number_of_replicas": 1,
       "refresh_interval": "10s",
       "codec": "best_compression",
-      "number_of_shards": 1
+      "number_of_shards": 3
     },
     "query": {
       "default_field": [
@@ -229,8 +269,7 @@
         "zeek.TTLs",
         "zeek.id.orig_h",
         "zeek.id.resp_p",
-        "zeek.rcode_name",
-        "zeek.community_id"
+        "zeek.rcode_name"
       ]
     }
   }
