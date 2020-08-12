@@ -201,7 +201,7 @@
             "type": "float"
           }
         }
-      }, 
+      },
       {
         "zeek.labels.subs": {
           "path_match": "zeek.labels.subs",
@@ -225,7 +225,15 @@
             "type": "keyword"
           }
         }
-      }    
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
+      }
     ]
   },
   "order": 0,

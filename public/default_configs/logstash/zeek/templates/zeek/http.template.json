@@ -169,16 +169,24 @@
             "type": "keyword"
           }
         }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   },
   "order": 0,
   "settings": {
     "index": {
-      "number_of_replicas": 1,
+      "number_of_replicas": 0,
       "refresh_interval": "10s",
       "codec": "best_compression",
-      "number_of_shards": 3
+      "number_of_shards": 1
     },
     "query": {
       "default_field": [
@@ -202,7 +210,8 @@
         "zeek.version",
         "zeek.status_code",
         "zeek.uri",
-        "zeek.method"
+        "zeek.method",
+        "zeek.community_id"
       ]
     }
   }

@@ -221,6 +221,14 @@
             "type": "keyword"
           }
         }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   }

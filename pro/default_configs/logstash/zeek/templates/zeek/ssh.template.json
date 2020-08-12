@@ -137,6 +137,14 @@
             "type": "float"
           }
         }
+      },
+      {
+        "zeek.community_id": {
+          "path_match": "zeek.community_id",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
       }
     ]
   },
@@ -166,7 +174,8 @@
         "zeek.version",
         "zeek.mac_alg",
         "zeek.kex_alg",
-        "zeek.auth_attempts"
+        "zeek.auth_attempts",
+        "zeek.community_id"
       ]
     }
   }
