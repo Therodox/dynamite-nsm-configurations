@@ -9,7 +9,8 @@ setup(
     scripts='deploy-configs',
     author_email='jamin@dynamite.ai',
     install_requires=[
-        'boto3'
+        'boto3',
+        'tabulate'
     ],
     description='Deploy Dynamite NSM Configurations'
 )
