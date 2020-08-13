@@ -6,6 +6,10 @@ Every release cycle, the Dynamite team publishes a corresponding set of configur
 
 ### What's in the Box?
 
+#### Default Configurations
+
+These configurations are applied, at install time, to the various installable DynamiteNSM components.
+
 | File/Directory | Description                                                                                                                                                                                                                     |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | .constants     | This file contains various parameters that are applied globally at component install time.                                                                                                                                      |
@@ -18,6 +22,10 @@ Every release cycle, the Dynamite team publishes a corresponding set of configur
 | suricata/      | Contains a `suricata.yaml` file used for the initial setup of Suricata IDS.                                                                                                                                                     |
 | systemd/       | Contains a collection of `.service` files and `.target` files used by the systemd subsystem.                                                                                                                                    |
 | zeek/          | Contains a default `broctl-nodes.cfg` To setup various Zeek cluster components, and a `local.zeek` file describing enabled scripts and definitions. This directory also contains plugins and scripts to be installed with Zeek. |
+
+#### Mirrors
+These mirrors represent locations where required DynamiteNSM components are downloaded. Each file contains a list of URLs where the corresponding package can be downloaded.
+
 
 ### Commandline
 
@@ -78,6 +86,7 @@ In other words the`logstash_docker_kafka_config_set_delta/` directory contains o
 
 \* *Note that including this flag will not make any changes to either of the directories referenced in the above command. These changes are made in memory and composited into `mirrors.$version.tar.gz` and `default_configs.$version.tar.gz`*
 
+Before a merge is completed you will be prompted with the merge strategy.
 
 ```
 ╒═════════════╤════════════════╤═════════════════════════════════════════════════════════════════════════════════════════╕
@@ -108,4 +117,14 @@ In other words the`logstash_docker_kafka_config_set_delta/` directory contains o
 │ file        │ overwrite      │ default_configs/logstash/zeek/conf.d/10_input_zeek_pipeline.conf                        │
 ╘═════════════╧════════════════╧═════════════════════════════════════════════════════════════════════════════════════════╛
 
+Detected 12 changes when building merge strategy for base_config_set/ <- logstash_docker_kafka_config_set_delta/
+OK with the above merge? [Y|n]: 
 ```
+
+### Using your new Mirrors and Configs in DynamiteNSM
+
+To update your mirrors/configs to point to your own S3 repository simply overwrite the 
+
+`DEEFAULT_CONFIGS_URL` and `MIRRORS_CONFIG_URL` in your [const.py](https://github.com/DynamiteAI/dynamite-nsm/blob/master/dynamite_nsm/const.py#L8-L10)
+
+pointing to your S3 repo.
