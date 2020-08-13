@@ -77,12 +77,12 @@ python3 deploy-configurations.py base_config_set/ 0.73 --overwrite
 By default,  this tool will not allow you to overwrite previous configurations in the same `config-staging-prefix`. However, you can force an overwrite on by using the `--overwrite` flag.
 
 ```
-python3 deploy-configurations.py base_config_set/ 0.73 --merge-directory=logstash_docker_kafka_config_set_delta/
+python3 deploy-configurations.py base_config_set/ 0.73 --merge-directory=config_deltas/logstash_docker_kafka_config_set_delta/
 ```
 
 If the `--merge-directory` is set that directory will automatically be merged into the $base_directory. In this case `logstash_docker_kafka_config_set_delta/` replicates only the additions/modifications to the `base_config_set/` we want to make.
 
-In other words the`logstash_docker_kafka_config_set_delta/` directory contains only files/directories it wants to create/overwrite. This utility uses `md5hash` comparisons to automatically exclude duplications. 
+In other words the`config_deltas/logstash_docker_kafka_config_set_delta/` directory contains only files/directories it wants to create/overwrite. This utility uses `md5hash` comparisons to automatically exclude duplications. 
 
 \* *Note that including this flag will not make any changes to either of the directories referenced in the above command. These changes are made in memory and composited into `mirrors.$version.tar.gz` and `default_configs.$version.tar.gz`*
 
