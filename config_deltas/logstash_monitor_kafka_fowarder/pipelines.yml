@@ -15,9 +15,9 @@
          pipeline { send_to => elastiflow }
          pipeline { send_to => kafka_forwarder }
       }
-      #else {
-      #  pipeline { send_to => synesis }
-      #}
+      else {
+        pipeline { send_to => synesis }
+      }
     }
 
 - pipeline.id: elastiflow_pipeline
