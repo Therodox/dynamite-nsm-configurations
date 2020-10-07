@@ -54,7 +54,7 @@ output.kafka:
   username: null
 output.logstash:
   bulk_max_size: 2048
-  enabled: false
+  enabled: true
   hosts:
   - localhost:5044
   loadbalance: true
@@ -62,7 +62,7 @@ output.logstash:
 output.redis:
   bulk_max_size: 2048
   db: 0
-  enabled: true
+  enabled: false
   hosts:
   - localhost:6379
   index: dynamite_events
