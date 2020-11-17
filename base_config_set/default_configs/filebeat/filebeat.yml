@@ -39,17 +39,37 @@ filebeat.config.modules:
   #reload.period: 10s
 
 
+output.elasticsearch:
+  enabled: false
+  hosts:
+  - localhost:9200
+  password: null
+  username: elastic
 output.kafka:
   enabled: false
   hosts:
   - localhost:9092
   password: null
-  topic: dynamite-events
+  topic: dynamite_events
   username: null
 output.logstash:
+  bulk_max_size: 2048
   enabled: true
   hosts:
   - localhost:5044
+  loadbalance: true
+  pipelining: 2
+output.redis:
+  bulk_max_size: 2048
+  db: 0
+  enabled: false
+  hosts:
+  - localhost:6379
+  index: dynamite_events
+  loadbalance: true
+  password: null
+  worker: 1
+
 
 #================================ Processors =====================================
 
