@@ -57,6 +57,8 @@ def get_deltas(base_root_dir, overwrite_root_dir):
     for overwrite_root, overwrite_dirs, overwrite_files in os.walk(overwrite_root_dir, topdown=True):
         relative_directory = overwrite_root.replace(overwrite_root_dir, '')
         base_directory = os.path.join(base_root_dir, relative_directory)
+        if relative_directory.startswith('.git'):
+            continue
         # Check if the equivalent overwrite path exists in the base directory
         if not os.path.exists(base_directory):
             # If it doesn't mark the directory for creation
