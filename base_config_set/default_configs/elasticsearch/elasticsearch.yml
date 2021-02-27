@@ -85,5 +85,11 @@ cluster.initial_master_nodes: ["dynamite-node"]
 #
 # Require explicit names when deleting indices:
 search.max_buckets: 10000
-opendistro_security.disabled: true
-opendistro_security.ssl.transport.enabled: false
+opendistro_security.disabled: false
+opendistro_security.ssl.transport.enabled: true
+opendistro_security.ssl.transport.pemcert_filepath: security/auth/admin.pem
+opendistro_security.ssl.transport.pemkey_filepath: security/auth/admin-key.pem
+opendistro_security.ssl.transport.pemtrustedcas_filepath: security/auth/root-ca.pem
+
+opendistro_security.authcz.admin_dn:
+  - 'CN=ADMIN,OU=UNIT,O=ORG,L=TORONTO,ST=ONTARIO,C=CA'
