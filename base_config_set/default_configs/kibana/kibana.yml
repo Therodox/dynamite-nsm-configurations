@@ -28,4 +28,6 @@ newsfeed.enabled: false
 telemetry.optIn: false
 telemetry.enabled: false
 security.showInsecureClusterWarning: false
+elasticsearch.username: kibanaserver
+elasticsearch.password: kibanaserver
 
